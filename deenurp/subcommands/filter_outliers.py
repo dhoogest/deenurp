@@ -245,7 +245,7 @@ def distmat_cmalign(
             util.ntf(prefix=prefix, suffix='.fasta') as a_fasta:
 
         scores = wrap.cmalign_files(sequence_file, a_sto.name, cpu=cpu)
-
+        print(prefix)
         low_scores = scores['bit_sc'] < min_bitscore
         if low_scores.any():
             msg = 'The following sequences aligned with bit score < {}: {}'
